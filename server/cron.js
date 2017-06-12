@@ -1,9 +1,10 @@
+<<<<<<< HEAD
 const CronJob = require('cron').CronJob;
 const axios = require('axios');
 
 var getMatchesCron = function(){
-  // will date get-matches to return array 
-  var user_id = 4; 
+  // will date get-matches to return array
+  var user_id = 4;
   var matchesArr = [[2,1],[6,2],[9,3]]
 
   var promises = [];
@@ -38,7 +39,7 @@ var getMatchesCron = function(){
       resObj.eduExp = arrayItem[2].data;
       resObj.projExp = arrayItem[3].data;
       dailyMatchesArr.push(resObj);
-    })    
+    })
     return dailyMatchesArr;
   })
   .then( (dailyMatchesArr) => {
@@ -53,12 +54,10 @@ var getMatchesCron = function(){
 
 }
 
-// updates every minute 
+// updates every minute
 var cron = new CronJob({
   cronTime: '*/1 * * * *',
   onTick: getMatchesCron,
   start: true,
   timeZone: 'America/Los_Angeles'
 });
-
-

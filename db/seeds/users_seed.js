@@ -2168,7 +2168,7 @@ exports.seed = function (knex, Promise) {
   .error(err => {
     console.error('ERROR: failed to create experience');
     throw err;
-  })  
+  })
   .then((experience) => {
     return models.Experience.forge({
       users_id: 18,
@@ -2183,7 +2183,7 @@ exports.seed = function (knex, Promise) {
   .error(err => {
     console.error('ERROR: failed to create experience');
     throw err;
-  })    
+  })
   .then((experience) => {
     return models.Experience.forge({
       users_id: 18,
@@ -2319,7 +2319,7 @@ exports.seed = function (knex, Promise) {
   .error(err => {
     console.error('ERROR: failed to create experience');
     throw err;
-  })  
+  })
   .then((experience) => {
     return models.Experience.forge({
       users_id: 19,
@@ -2334,7 +2334,7 @@ exports.seed = function (knex, Promise) {
   .error(err => {
     console.error('ERROR: failed to create experience');
     throw err;
-  })    
+  })
   .then((experience) => {
     return models.Experience.forge({
       users_id: 19,
@@ -2470,7 +2470,7 @@ exports.seed = function (knex, Promise) {
   .error(err => {
     console.error('ERROR: failed to create experience');
     throw err;
-  })  
+  })
   .then((experience) => {
     return models.Experience.forge({
       users_id: 20,
@@ -2606,7 +2606,7 @@ exports.seed = function (knex, Promise) {
   .error(err => {
     console.error('ERROR: failed to create experience');
     throw err;
-  })  
+  })
   .then((experience) => {
     return models.Experience.forge({
       users_id: 21,
@@ -2759,11 +2759,127 @@ exports.seed = function (knex, Promise) {
     throw err;
   })
 
-
+  // user23
+  .then((user) => {
+    return models.Users.forge({
+      full_name: 'Erika K. Ross',
+      vertical: 'Biomedical',
+      github_url: 'https://github.com/erikaross',
+      linkedin_url: 'https://www.linkedin.com/in/rosserika/',
+      image: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAtcAAAAJDkwMzVmYzVmLWNkOTgtNDhiMC1iYTcxLWEwYmY0MDcxMDE5ZQ.jpg',
+      summary: 'I am a senior neuroscientist.',
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create user');
+    throw err;
+  })
+  .then((login) => {
+    return models.Login.forge({
+     username: 'ERoss',
+     password: 'password'
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create login');
+    throw err;
+  })
+  .then((tag) => {
+    return models.Users_tag.forge({
+      users_id: 23,
+      tag_id: 12
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create users_tag');
+    throw err;
+  })
+  .then((tag) => {
+    return models.Users_tag.forge({
+      users_id: 23,
+      tag_id: 1
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create users_tag');
+    throw err;
+  })
+  .then((tag) => {
+    return models.Users_tag.forge({
+      users_id: 23,
+      tag_id: 10
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create users_tag');
+    throw err;
+  })
+  .then((tag) => {
+    return models.Users_tag.forge({
+      users_id: 23,
+      tag_id: 13
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create users_tag');
+    throw err;
+  })
+  .then((tag) => {
+    return models.Users_tag.forge({
+      users_id: 23,
+      tag_id: 14
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create users_tag');
+    throw err;
+  })
+  .then((experience) => {
+    return models.Experience.forge({
+      users_id: 23,
+      name: 'professional',
+      role: 'Neuroscientist',
+      description: 'Deep brain stimulation',
+      start_date: 2017,
+      end_date: null,
+      organization: 'Cala Health'
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create experience');
+    throw err;
+  })
+  .then((experience) => {
+    return models.Experience.forge({
+      users_id: 23,
+      name: 'projects',
+      role: 'Thesis',
+      description: 'DBS for preclinical brain disorders.',
+      start_date: 2013,
+      end_date: 2016,
+      organization: 'Mayo Clinic Graduate School'
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create experience');
+    throw err;
+  })
+  .then((experience) => {
+    return models.Experience.forge({
+      users_id: 23,
+      name: 'education',
+      role: 'PhD in Neurobiology of Disease',
+      description: 'Doctor of Philosophy degree in Biomedical Sciences, Neurobiology of Disease',
+      start_date: 2013,
+      end_date: 2016,
+      organization: 'Mayo Clinic'
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create experience');
+    throw err;
+  })
 };
-
-
-
 
 // copy users (id, full_name, vertical) to '/Users/rpk/development/github.com/prosperousPans/prosperousPans/db/migrations/csv-files/users.csv' delimiter ',' csv header;
 

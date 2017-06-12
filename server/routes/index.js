@@ -24,3 +24,4 @@ module.exports.priorityRecommendation = require('./priorityRecommendation');
 
 module.exports.getMatches = require('./getMatches');
 
+module.exports.getMutualFriendCount = require('./getMutualFriendCount');

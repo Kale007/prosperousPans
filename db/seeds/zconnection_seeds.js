@@ -394,7 +394,7 @@ exports.seed = function (knex, Promise) {
   .error(err => {
     console.error('ERROR: failed to create connection');
     throw err;
-  })  
+  })
   .then((connection) => {
     return models.Connection.forge({
       users_a_id: 4,
@@ -1755,6 +1755,78 @@ exports.seed = function (knex, Promise) {
     return models.Connection.forge({
       users_a_id: 21,
       users_b_id: 19,
+      status: 'accept',
+      reason: 'professional'
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create connection');
+    throw err;
+  })
+  .then((connection) => {
+    return models.Connection.forge({
+      users_a_id: 22,
+      users_b_id: 1,
+      status: 'accept',
+      reason: 'education'
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create connection');
+    throw err;
+  })
+  .then((connection) => {
+    return models.Connection.forge({
+      users_a_id: 22,
+      users_b_id: 1,
+      status: 'accept',
+      reason: 'personal'
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create connection');
+    throw err;
+  })
+  .then((connection) => {
+    return models.Connection.forge({
+      users_a_id: 22,
+      users_b_id: 10,
+      status: 'reject',
+      reason: 'projects'
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create connection');
+    throw err;
+  })
+  .then((connection) => {
+    return models.Connection.forge({
+      users_a_id: 22,
+      users_b_id: 16,
+      status: 'reject',
+      reason: 'professional'
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create connection');
+    throw err;
+  })
+  .then((connection) => {
+    return models.Connection.forge({
+      users_a_id: 22,
+      users_b_id: 17,
+      status: 'acccept',
+      reason: 'education'
+    }).save()
+  })
+  .error(err => {
+    console.error('ERROR: failed to create connection');
+    throw err;
+  })
+  .then((connection) => {
+    return models.Connection.forge({
+      users_a_id: 22,
+      users_b_id: 21,
       status: 'accept',
       reason: 'professional'
     }).save()

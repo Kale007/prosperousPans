@@ -5,7 +5,7 @@
       "database": "pursume",
       "user": "postgres",
       "password": "postgres",
-      "host": "localhost",
+      "host": "pgdb",
       "port": 5432
     },
     "pool": {

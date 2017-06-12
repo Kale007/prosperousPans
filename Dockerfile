@@ -1,11 +1,15 @@
-FROM node:boron
+FROM node:8.1.0
 
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-
+RUN wait=10
 # Install app dependencies
 COPY . /usr/src/app/
+
+RUN npm update           && \
+    npm install -g grunt
+
 RUN npm install
 
 EXPOSE 3000
