@@ -6,7 +6,7 @@ const routes = require('./routes');
 const jwtCheck = require('./middleware/auth');
 
 //required to call ./cron.js file
-const Cron = require('./cron.js')
+// const Cron = require('./cron.js')
 
 const app = express();
 
@@ -14,7 +14,7 @@ const app = express();
 // const app = require('../app');
 
 
-app.use(jwtCheck);
+// app.use(jwtCheck);
 
 app.use(middleware.morgan('dev'));
 app.use(middleware.cookieParser());

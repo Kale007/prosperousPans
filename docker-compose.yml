@@ -1,11 +1,31 @@
-version: '3'
+version: "2"
 services:
-  neo4j:
-    image: neo4j:3.2.1
-    ports:
-      - "7474:7474"
-    environment:
-      NEO4J_AUTH: "none"
+    neo4j:
+      image: neo4j:3.2.1
+      mem_limit: 4096m
+      restart: on-failure
+      ports:
+       - "17474:7474"
+       - "7687:7687"
+      environment:
+        - NEO4J_AUTH=none
+      # volumes:
+      #   - $HOME/neo4jdev2docker /data:/data
+    db:
+      image: postgres:9.6.3
+      ports:
+        - "5432:5432"
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+
+# services:
+#   neo4j:
+#     image: neo4j:3.2.1
+#     ports:
+#       - "7474:17474"
+#     environment:
+#       NEO4J_AUTH: none
   # pgdb:
   #   image: postgres
   #   ports:
