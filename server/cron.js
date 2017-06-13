@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const CronJob = require('cron').CronJob;
 const axios = require('axios');
 
@@ -51,7 +50,6 @@ var getMatchesCron = function(){
       console.log('daily_all_matches updated');
     })
   });
-
 }
 
 // updates every minute

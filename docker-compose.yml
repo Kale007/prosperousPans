@@ -1,21 +1,27 @@
 version: '3'
 services:
-  pgdb:
-    image: postgres
+  neo4j:
+    image: neo4j:3.2.1
     ports:
-      - "5432:5432"
+      - "7474:7474"
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-  web:
-    image: node-app
-    ports:
-      - "3333:3333"
-    depends_on:
-      - pgdb
-    environment:
-      SEQ_DB: pursume
-      SEQ_USER: postgres
-      SEQ_PW: postgres
-      PORT: 5432
-      DATABASE_URL: postgres://postgres:postgres@pgdb:5432/pursume
+      NEO4J_AUTH: "none"
+  # pgdb:
+  #   image: postgres
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  # web:
+  #   image: node-app
+  #   ports:
+  #     - "3333:3333"
+  #   depends_on:
+  #     - pgdb
+  #   environment:
+  #     SEQ_DB: pursume
+  #     SEQ_USER: postgres
+  #     SEQ_PW: postgres
+  #     PORT: 5432
+  #     DATABASE_URL: postgres://postgres:postgres@pgdb:5432/pursume
